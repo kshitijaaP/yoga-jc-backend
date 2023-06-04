@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require("cors");
+require("dotenv").config()
 
 const app = express();
 const router = require('./routes/router')
@@ -24,6 +25,6 @@ app.get('/getOneBatchData/:id', router)
 app.post('/deletebatchdata/:id', router)
 
 
+const PORT = process.env.PORT || 5050
 
-
-app.listen(5050)
+app.listen(PORT, () => console.log(`Server started at port ${PORT}`))
